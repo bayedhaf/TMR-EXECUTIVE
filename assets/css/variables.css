@@ -1,0 +1,40 @@
+:root {
+    --bg-black: #080D14; /* Updated to your Figma hex */
+    --bg-glow: #0d141d;
+    --gold: #c9b183;
+    --text-main: #ffffff;
+    --text-muted: #94a3b8;
+    --card-bg: rgba(22, 27, 34, 0.4);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-black);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* --- THE FIGMA GRADIENT IMPLEMENTATION --- */
+.page-wrapper {
+    position: relative;
+    min-height: 100vh;
+    /* Layer 1: The Radial Glow behind the portrait */
+    background: radial-gradient(circle at 80% 20%, var(--bg-glow) 0%, var(--bg-black) 70%);
+}
+
+.page-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* Layer 2: Your exact Figma Linear Gradient */
+    background: linear-gradient(178.7deg, rgba(8, 13, 20, 0) 28.07%, rgba(8, 13, 20, 0.0145485) 28.07%, #080D14 76.99%);
+    pointer-events: none;
+    z-index: 1;
+}
