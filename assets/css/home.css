@@ -40,16 +40,7 @@ body {
 }
 
 /* Ensure content stays above the gradient overlay */
-header {
-    position: fixed; /* Keep it sticky as you requested */
-    width: 100%;    /* Ensure it spans the full width */
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    background-color: #FFFFFF;
-    box-shadow: 0px 6px 10px 0px #0000001A;
-    transition: all var(--transition);
-}
+
 main {
     padding-top: 100px; 
     position: relative;
@@ -61,38 +52,16 @@ main {
     padding: 0 40px;
 }
 
-/* --- Navigation --- */
-header { padding: 30px 0; }
-.nav-container { display: flex; justify-content: space-between; align-items: center; }
-.logo-text {
-    font-weight: 700;
-    letter-spacing: 2px;
-    border: 1px solid #000000; /* Black border */
-    padding: 5px 12px;
-    font-size: 0.9rem;
-    color: #000000; /* Black text */
-}
-nav ul { display: flex; list-style: none; gap: 25px; align-items: center; }nav ul li a {
-    text-decoration: none;
-    color: #000000; /* Black text for links */
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    transition: var(--transition);
-}
 
-/* Keeping the active pill visible */
-.nav-pill.active {
-    background-color: var(--gold);
-    color: #000000; /* Black text inside the gold pill */
-    padding: 8px 20px;
-    border-radius: 50px;
-}
 /* --- Hero Section --- */
-.hero { padding: 60px 0 100px; }
+.hero { padding: 60px 0 100px;
+ background: linear-gradient(178.7deg, rgba(8, 13, 20, 0) 28.07%, rgba(8, 13, 20, 0.0145485) 28.07%, #080D14 76.99%),
+ url("https://tmr-executive.fr/wp-content/uploads/2026/03/fde99f830664f4da531a6b3d818dbfa23638f48f-1.png");
+
+  background-size: cover; }
 .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 40px; }
-.sub-brand { color: var(--gold); font-size: 1.8rem; margin-bottom: 10px; }
-.headline { font-size: 2.8rem; font-weight: 700; margin-bottom: 30px; line-height: 1.1; }
+.sub-brand { color: var(--gold); font-size: 2.8rem; margin-bottom: 10px; }
+.headline { font-size: 1.8rem; font-weight: 700; margin-bottom: 30px; line-height: 1.1; }
 .highlight-text { font-weight: 600; font-size: 1.2rem; margin-bottom: 15px; }
 .body-text { color: var(--text-muted); font-size: 0.95rem; max-width: 480px; margin-bottom: 40px; }
 .btn-cta { 
@@ -111,7 +80,7 @@ nav ul { display: flex; list-style: none; gap: 25px; align-items: center; }nav u
     position: absolute;
     width: 600px;
     height: 600px;
-    background: repeating-radial-gradient(circle, transparent, transparent 50px, rgba(201, 177, 131, 0.12) 51px, transparent 52px);
+    background: repeating-radial-gradient(circle, transparent, transparent 50px, #f8c5661f 41px, transparent 54px);
     z-index: -1;
     top: 50%;
     left: 50%;
@@ -127,7 +96,7 @@ nav ul { display: flex; list-style: none; gap: 25px; align-items: center; }nav u
     /* This is the magic part: */
     /* It creates a transparency gradient ON the image itself */
     -webkit-mask-image: linear-gradient(to bottom, 
-        black 70%,           /* Body is fully visible */
+        black 90%,           /* Body is fully visible */
         rgba(0, 0, 0, 0.5) 85%, /* Starts to fade */
         transparent 100%     /* Completely disappears into your site background */
     );
